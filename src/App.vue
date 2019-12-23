@@ -39,6 +39,9 @@
 
     <v-content>
       <HelloWorld/>
+      <v-footer>
+        Powered by {{appName}} v{{version}}
+      </v-footer>
     </v-content>
   </v-app>
 </template>
@@ -54,5 +57,6 @@ import { vxm } from '@/store';
 })
 export default class App extends Vue {
   version = vxm.app.version;
+  appName = vxm.app.appName;
 }
 </script>

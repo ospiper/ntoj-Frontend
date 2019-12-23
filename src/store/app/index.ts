@@ -22,4 +22,8 @@ export class AppStore extends VuexModule {
       (this.v >> 8 & 0xFF) + '.' +
       (this.v & 0xFF);
   }
+
+  get appName(): string {
+    return process.env.VUE_APP_NAME;
+  }
 }
