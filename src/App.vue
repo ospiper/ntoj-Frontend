@@ -32,7 +32,7 @@
         target="_blank"
         text
       >
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">Latest Release: {{version}}</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
@@ -46,16 +46,13 @@
 <script lang="ts">
 import Vue from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
+import Component from 'vue-class-component';
+import { vxm } from '@/store';
 
-export default Vue.extend({
-  name: 'App',
-
-  components: {
-    HelloWorld,
-  },
-
-  data: () => ({
-    //
-  }),
-});
+@Component({
+  components: { HelloWorld }
+})
+export default class App extends Vue {
+  version = vxm.app.version;
+}
 </script>
