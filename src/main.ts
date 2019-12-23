@@ -4,11 +4,19 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
 
-Vue.config.productionTip = false
+import * as filters from './filters';
+
+Object.keys(filters).forEach(k => {
+  // @ts-ignore
+  Vue.filter(k, filters[k]);
+});
+
+Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
+  // @ts-ignore
   vuetify,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
