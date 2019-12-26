@@ -1,4 +1,5 @@
 import { createModule } from 'vuex-class-component';
+import { mutation } from 'vuex-class-component/js';
 
 const VuexModule = createModule({
   namespaced: 'app',
@@ -16,6 +17,15 @@ export class AppStore extends VuexModule {
    */
   private v: number = 0x00000001;
 
+  public pageTitle: string = 'NTOJ';
+
+  @mutation changeTitle(val: string) {
+    if (this.pageTitle !== val) {
+      this.pageTitle = val;
+      document.title = val;
+    }
+  }
+
   get version(): string {
     return (this.v >> 24 & 0xFF) + '.' +
       (this.v >> 16 & 0xFF) + '.' +
@@ -26,4 +36,5 @@ export class AppStore extends VuexModule {
   get appName(): string {
     return process.env.VUE_APP_NAME;
   }
+
 }

@@ -11,6 +11,10 @@ Object.keys(filters).forEach(k => {
   Vue.filter(k, filters[k]);
 });
 
+import Toasted from 'vue-toasted';
+
+Vue.use(Toasted);
+
 Vue.config.productionTip = false;
 
 new Vue({
