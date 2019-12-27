@@ -13,7 +13,9 @@ Object.keys(filters).forEach(k => {
 
 import Toasted from 'vue-toasted';
 
-Vue.use(Toasted);
+Vue.use(Toasted, {
+  duration: 3000,
+});
 
 Vue.config.productionTip = false;
 

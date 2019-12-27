@@ -2,9 +2,6 @@
   <v-app>
     <v-content>
       <router-view/>
-      <v-footer>
-        Powered by {{appName}} v{{version}}
-      </v-footer>
     </v-content>
   </v-app>
 </template>
